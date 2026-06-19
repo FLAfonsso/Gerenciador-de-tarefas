@@ -1,61 +1,43 @@
-# 📋 Gerenciador de Tarefas
+📋 Gerenciador de Tarefas
+React JavaScript
 
-Aplicacao desenvolvida em **React** para gerenciamento de tarefas diarias.
+Uma aplicacao moderna e responsiva para gerenciamento de tarefas diarias, desenvolvida em React com estado global via Context API e useReducer.
 
-![Tela da aplicacao](https://via.placeholder.com/600x400/f0f2f5/2c3e50?text=Gerenciador+de+Tarefas)
+App Preview
 
-## ✨ Funcionalidades
+✨ Funcionalidades
+✅ Adicionar Tarefas - Campo de entrada intuitivo para criar novas tarefas
+✅ Marcar como Concluida - Checkbox interativo ao lado de cada tarefa
+🔍 Filtrar Tarefas - Visualize Todas, Concluidas ou Pendentes
+🌙 Tema Claro/Escuro - Alterne entre os temas com um clique
+📱 Responsivo - Adapta-se perfeitamente a dispositivos moveis, tablets e desktop
+🎨 Design Limpo - Interface organizada com cards, sombras leves e bordas arredondadas
 
-- ✅ **Adicionar tarefas** — Digite no campo e clique em "Adicionar"
-- ✅ **Marcar como concluida** — Clique no checkbox ao lado da tarefa
-- ✅ **Filtrar tarefas** — Visualize Todas, Concluidas ou Pendentes
-- 🌙 **Tema Claro/Escuro** — Alterne entre os temas com o botao no canto superior
+🚀 Tecnologias Utilizadas
+React 18 - Biblioteca para construcao de interfaces
+Hooks - useState, useContext, useReducer, useEffect
+Context API - Gerenciamento de estado global
+CSS3 - Estilizacao com variaveis CSS e tema dinamico
+GitHub Pages - Hospedagem gratuita (opcional)
 
-## 🚀 Como executar
-
-```bash
-# Clone o repositorio
-git clone https://github.com/seu-usuario/gerenciador-tarefas.git
-
-# Entre na pasta
-cd gerenciador-tarefas
-
-# Instale as dependencias
-npm install
-
-# Execute a aplicacao
-npm start
-```
-
-Acesse `http://localhost:3000` no navegador.
-
-## 🛠️ Tecnologias
-
-- **React** 18
-- **Hooks**: useState, useContext, useReducer, useEffect
-- **Context API** para estado global
-- **CSS Variables** para tema dinamico
-
-## 📁 Estrutura
-
-```
-src/
-├── index.js              # Ponto de entrada
-├── index.css             # Estilos globais (com tema claro/escuro)
-├── App.js                # Componente principal + toggle de tema
-├── context/
-│   └── TaskContext.js    # Estado global (useReducer + Context)
-└── components/
-    ├── ListaDeTarefas.js # Lista com filtros
-    └── Tarefa.js         # Item individual
-```
-
-## 📝 Sobre
-
-Projeto desenvolvido como atividade academica em **Linguagem de Programacao para a Internet**.
-
-Testado e funcionando. Atualmente estudando outras linguagens e frameworks para expandir meus conhecimentos em desenvolvimento web.
-
----
-
-Feito com 💙 e React
+📁 Estrutura do Projeto
+gerenciador-tarefas/
+│
+├── public/
+│   └── index.html          # Pagina principal com favicon e titulo
+│
+├── src/
+│   ├── index.js            # Ponto de entrada da aplicacao
+│   ├── index.css           # Estilos globais (tema claro/escuro)
+│   ├── App.js              # Componente principal + toggle de tema
+│   │
+│   ├── context/
+│   │   └── TaskContext.js  # Estado global com useReducer + Context API
+│   │
+│   └── components/
+│       ├── ListaDeTarefas.js  # Lista com filtros e mensagens
+│       └── Tarefa.js          # Item individual da lista
+│
+├── package.json            # Dependencias e scripts
+├── README.md               # Documentacao
+└── .gitignore              # Arquivos ignorados pelo Git
