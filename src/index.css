@@ -1,0 +1,324 @@
+/* ============================================
+   CSS Global - Gerenciador de Tarefas
+   Com suporte a tema Claro/Escuro
+   ============================================ */
+
+/* Tema Claro (padrao) */
+:root {
+  --cor-primaria: #4a90d9;
+  --cor-primaria-escura: #357abd;
+  --cor-sucesso: #28a745;
+  --cor-sucesso-escura: #218838;
+  --cor-texto: #2c3e50;
+  --cor-texto-secundario: #5a6c7d;
+  --cor-texto-muted: #8898aa;
+  --cor-fundo: #f0f2f5;
+  --cor-card: #ffffff;
+  --cor-input: #f8fafc;
+  --cor-borda: #e2e8f0;
+  --cor-borda-hover: #cbd5e0;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --sombra-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --raio: 10px;
+  --transicao: all 0.2s ease;
+}
+
+/* Tema Escuro */
+[data-tema="escuro"] {
+  --cor-primaria: #5a9fd9;
+  --cor-primaria-escura: #4a8ec9;
+  --cor-sucesso: #34ce57;
+  --cor-sucesso-escura: #28a745;
+  --cor-texto: #e2e8f0;
+  --cor-texto-secundario: #a0aec0;
+  --cor-texto-muted: #718096;
+  --cor-fundo: #1a202c;
+  --cor-card: #2d3748;
+  --cor-input: #4a5568;
+  --cor-borda: #4a5568;
+  --cor-borda-hover: #718096;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --sombra-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  transition: var(--transicao);
+}
+
+/* ============================================
+   Botao de Tema
+   ============================================ */
+
+.btn-tema {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--cor-borda);
+  background: var(--cor-card);
+  color: var(--cor-texto);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transicao);
+  z-index: 100;
+  box-shadow: var(--sombra);
+}
+
+.btn-tema:hover {
+  transform: scale(1.1);
+  box-shadow: var(--sombra-hover);
+}
+
+/* ============================================
+   Layout Principal
+   ============================================ */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px 40px;
+}
+
+.app-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--cor-card);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 32px;
+  animation: fadeInUp 0.5s ease-out;
+  transition: var(--transicao);
+}
+
+.app-titulo {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: 24px;
+}
+
+/* ============================================
+   Formulario
+   ============================================ */
+
+.form-tarefa {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.input-tarefa {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-input);
+  font-size: 1rem;
+  color: var(--cor-texto);
+  outline: none;
+  transition: var(--transicao);
+  font-family: inherit;
+}
+
+.input-tarefa:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.15);
+}
+
+.input-tarefa::placeholder {
+  color: var(--cor-texto-muted);
+}
+
+.btn-adicionar {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--cor-sucesso), var(--cor-sucesso-escura));
+  color: white;
+  border: none;
+  border-radius: var(--raio);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicao);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.btn-adicionar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* ============================================
+   Filtros
+   ============================================ */
+
+.filtros-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-filtro {
+  padding: 8px 16px;
+  background: var(--cor-card);
+  color: var(--cor-texto-secundario);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transicao);
+  font-family: inherit;
+}
+
+.btn-filtro:hover {
+  border-color: var(--cor-borda-hover);
+}
+
+.btn-filtro.ativo {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+  color: white;
+  border-color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+/* ============================================
+   Lista de Tarefas
+   ============================================ */
+
+.lista-tarefas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-tarefa {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  transition: var(--transicao);
+  cursor: pointer;
+  animation: slideIn 0.3s ease-out;
+}
+
+.item-tarefa:hover {
+  background: var(--cor-input);
+  border-color: var(--cor-borda-hover);
+  transform: translateX(4px);
+  box-shadow: var(--sombra);
+}
+
+.item-tarefa.concluida {
+  opacity: 0.7;
+}
+
+.checkbox-tarefa {
+  width: 20px;
+  height: 20px;
+  margin-right: 14px;
+  cursor: pointer;
+  accent-color: var(--cor-sucesso);
+  flex-shrink: 0;
+}
+
+.texto-tarefa {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  transition: var(--transicao);
+}
+
+.item-tarefa.concluida .texto-tarefa {
+  text-decoration: line-through;
+  color: var(--cor-texto-muted);
+}
+
+/* ============================================
+   Estados Vazios
+   ============================================ */
+
+.mensagem-vazia {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--cor-texto-muted);
+  font-size: 1rem;
+}
+
+/* ============================================
+   Animacoes
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   Responsivo
+   ============================================ */
+
+@media (max-width: 480px) {
+  .app-card {
+    padding: 20px;
+  }
+
+  .app-titulo {
+    font-size: 1.3rem;
+  }
+
+  .form-tarefa {
+    flex-direction: column;
+  }
+
+  .btn-adicionar {
+    width: 100%;
+  }
+
+  .btn-tema {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+  }
+}
