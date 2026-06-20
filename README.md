@@ -1,7 +1,7 @@
 📋 Gerenciador de Tarefas
 React JavaScript
 
-Uma aplicacao moderna e responsiva para gerenciamento de tarefas diarias, desenvolvida em React com estado global via Context API e useReducer.
+Uma aplicacão moderna e responsiva para gerenciamento de tarefas diarias, desenvolvida em React com estado global via Context API e useReducer.
 
 App Preview
 
