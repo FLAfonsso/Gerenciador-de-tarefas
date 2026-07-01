@@ -18,7 +18,7 @@ React 18 - Biblioteca para construcao de interfaces
 Hooks - useState, useContext, useReducer, useEffect
 Context API - Gerenciamento de estado global
 CSS3 - Estilizacao com variaveis CSS e tema dinamico
-GitHub Pages - Hospedagem gratuita (opcional)
+
 
 📁 Estrutura do Projeto
 gerenciador-tarefas/
