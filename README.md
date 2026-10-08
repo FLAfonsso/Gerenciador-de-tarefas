@@ -41,3 +41,5 @@ gerenciador-tarefas/
 ├── package.json            # Dependencias e scripts
 ├── README.md               # Documentacao
 └── .gitignore              # Arquivos ignorados pelo Git
+
+Desenvolvido por Pedro Afonso.
